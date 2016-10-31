@@ -1,0 +1,12 @@
+<module>
+
+	<!-- WS Compiler: manually edited -->
+
+	<!-- Inherit DefaultWidgetSet -->
+	<inherits name="com.vaadin.DefaultWidgetSet" />
+	<add-linker name="xsiframe" />
+	<set-configuration-property name="devModeRedirectEnabled" value="true" />
+	<!-- Widget styles in public -directory -->
+	<stylesheet src="hintbutton/styles.css"/>
+
+</module>
