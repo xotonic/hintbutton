@@ -1,4 +1,4 @@
-## Popover extention for Vaadin fields
+## Popover extension for Vaadin fields
 
 *work in progress*
 
