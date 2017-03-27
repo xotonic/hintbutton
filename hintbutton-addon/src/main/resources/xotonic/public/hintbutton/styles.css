@@ -1,64 +1,74 @@
 div.hintbutton {
-	cursor: pointer;
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#hint-button-overlay
+{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
 }
 
 .box {
     position: relative;
-    background: #1c1c1c;
+    background: rgba(50, 50, 50, 0.9);
     border: 1px solid #5e5e5e;
     padding: 10px;
-    color: lightgray;
+    color: white;
     border-radius: 5px;
-    font: 300 0.9em "Open Sans", sans-serif;
-}
-.box:after, .box:before {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
+    font: 400 14px/1.55 "Open Sans", sans-serif;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
-.box:after {
-    border-color: rgba(28, 28, 28, 0);
-    border-bottom-color: #1c1c1c;
-    border-width: 20px;
-    margin-left: -20px;
+.box.hb-header
+{
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
-.box:before {
-    border-color: rgba(94, 94, 94, 0);
-    border-bottom-color: #5e5e5e;
-    border-width: 21px;
-    margin-left: -21px;
+
+.box .hb-icon
+{
+    color: white;
+    padding-right: 5px;
+}
+
+.box.hb-header.hb-header-caption
+{
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+.box.hb-body
+{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .hintbutton-textfield {
-	padding-right: 16pt !important;
+    padding-right: 16pt !important;
 }
 
 .hintbutton-button {
     position: relative;
     display: inline-block;
-    vertical-align: middle;
     right: 15pt;
-    margin: 10px 0;
-    cursor: pointer;
+    top: 4px;
+    margin-right: -18pt;
     width: 16px;
-    height: 16px;
-    background: url('button.svg') no-repeat center center;
-    background-size: 16px 16px;
-    transition: transform 0.2s;
+    height: 24px;
+    transition: color 0.140ms;
+    color: #a3a3a3;
 }
 
 .hintbutton-button:hover {
-    transform: scale(1.5);
+    color: #474747;
     cursor: pointer;
 }
 
@@ -69,16 +79,36 @@ div.hintbutton {
 #hintbutton-popup-root
 {
     position: absolute;
-    top: 5000px;
-    left: 5000px;
     min-width: 200px;
     opacity: 0;
     visibility: collapse;
     transition:visibility 0s linear 0.2s, opacity 0.2s linear;
+    max-width: 400px;
 }
 
 #hintbutton-popup-root.showed {
     opacity: 1;
     visibility:visible;
     transition-delay:0s;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#hintbutton-popup-root.default-position
+{
+    top: 10px;
+    left: 10px;
+}
+
+
+#hintbutton-popup-root.default-position.in-bottom
+{
+    bottom: 10px;
+    left: 10px;
+    top: initial;
+}
+
+
+#hintbutton-popup-root:focus {
+    outline: none;
 }

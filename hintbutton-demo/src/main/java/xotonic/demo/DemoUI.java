@@ -6,7 +6,7 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
-import xotonic.HintButton;
+import xotonic.HintButtonForTextField;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -28,15 +28,15 @@ public class DemoUI extends UI
         TextField tf2 = new TextField();
         name.setCaption("Type your name here:");
         Button button = new Button("Click Me");
-        HintButton.addTo(name);
-        HintButton.addTo(tf2);
+        new HintButtonForTextField().addTo(name);
+        new HintButtonForTextField().addTo(tf2);
         button.addClickListener(e -> {
             Window w = new Window("Test");
             w.setModal(true);
             TextField tf = new TextField("Caption 1");
             TextField tf1 = new TextField("Caption 2");
-            HintButton.addTo(tf);
-            HintButton.addTo(tf1);
+            new HintButtonForTextField().addTo(tf);
+            new HintButtonForTextField().addTo(tf1);
             VerticalLayout l = new VerticalLayout();
             l.addComponent(tf);
             l.addComponent(tf1);
